@@ -45,5 +45,5 @@ jobs:
           tags: |
             hansenmarvin/rust-build:1.76-alpine
             hansenmarvin/rust-build:latest
-            ghcr.io/marvin-hansen/rust-build:1.76-alpine
-            ghcr.io/marvin-hansen/rust-build:latest
+            ghcr.io/marvin-hansen/mimalloc/rust-build:1.76-alpine
+            ghcr.io/marvin-hansen/mimalloc/rust-build:latest
