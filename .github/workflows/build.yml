@@ -31,4 +31,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags:  hansenmarvin/rust-build:1.76-alpine-latest
+          tags:  hansenmarvin/rust-build:1.76-alpine
