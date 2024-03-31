@@ -43,7 +43,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            hansenmarvin/rust-build:1.76-alpine
+            hansenmarvin/rust-build:1.77-alpine
             hansenmarvin/rust-build:latest
-            ghcr.io/marvin-hansen/mimalloc/rust-build:1.76-alpine
+            ghcr.io/marvin-hansen/mimalloc/rust-build:1.77-alpine
             ghcr.io/marvin-hansen/mimalloc/rust-build:latest
