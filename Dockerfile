@@ -6,11 +6,7 @@ FROM rust:1.77-alpine3.19
 RUN apk upgrade --no-cache
 
 # Add build dependencies
-RUN apk add --no-cache alpine-sdk cmake mold samurai make protobuf-dev
-
-# Extra packages required to build for vendored (_`openssl-dev` + `openssl-libs-static` not required since `vendored` builds from source_):
-# https://github.com/sfackler/rust-openssl/issues/1627
-RUN apk add --no-cache make musl-dev perl
+RUN apk add --no-cache alpine-sdk cmake mold samurai make protoc protobuf-dev  musl-dev
 
 # Add musl build target for ARM64 linux
 RUN rustup target add aarch64-unknown-linux-musl
