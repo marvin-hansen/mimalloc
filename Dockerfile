@@ -1,11 +1,10 @@
-FROM rust:1.77.1-alpine3.19
+# Official releases: https://hub.docker.com/_/rust
+FROM rust:1.77-alpine3.19
 
-LABEL org.opencontainers.image.source=https://github.com/marvin-hansen/mimalloc
-LABEL org.opencontainers.image.description="Docker base image using Microsoft mimalloc"
-LABEL org.opencontainers.image.licenses=MIT
 
 RUN apk upgrade --no-cache
 
+# Add build dependencies
 RUN apk add --no-cache alpine-sdk cmake mold samurai make protobuf-dev
 
 # Extra packages required to build for vendored (_`openssl-dev` + `openssl-libs-static` not required since `vendored` builds from source_):
