@@ -1,7 +1,8 @@
 # Official releases: https://hub.docker.com/_/rust
+# Update tags in build.yaml when updating to new Rust version.
 FROM rust:1.77-alpine3.19
 
-
+# Update apk packagte list
 RUN apk upgrade --no-cache
 
 # Add build dependencies
