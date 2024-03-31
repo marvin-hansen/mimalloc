@@ -1,4 +1,4 @@
-FROM rust:1.76-alpine3.19
+FROM rust:1.77.1-alpine3.19
 
 LABEL org.opencontainers.image.source=https://github.com/marvin-hansen/mimalloc
 LABEL org.opencontainers.image.description="Docker base image using Microsoft mimalloc"
@@ -12,8 +12,11 @@ RUN apk add --no-cache alpine-sdk cmake mold samurai make protobuf-dev
 # https://github.com/sfackler/rust-openssl/issues/1627
 RUN apk add --no-cache make musl-dev perl
 
-# Add musl build target
+# Add musl build target for ARM64 linux
 RUN rustup target add aarch64-unknown-linux-musl
+
+# Add musl build target for Intel/AMD linux
+RUN rustup target add x86_64-unknown-linux-musl
 
 # Add script and patch
 COPY build.sh mimalloc.diff /tmp/
