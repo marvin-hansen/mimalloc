@@ -6,7 +6,7 @@ FROM rust:1.77-alpine3.19
 RUN apk upgrade --no-cache
 
 # Add build dependencies
-RUN apk add --no-cache alpine-sdk cmake mold samurai make protoc protobuf-dev  musl-dev
+RUN apk add --no-cache alpine-sdk cmake mold samurai make protoc protobuf-dev musl-dev
 
 # Add musl build target for ARM64 linux
 RUN rustup target add aarch64-unknown-linux-musl
