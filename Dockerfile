@@ -1,6 +1,13 @@
 # Official releases: https://hub.docker.com/_/rust
+# FROM rust:1.77-alpine3.19
+
 # Update tags in build.yaml when updating to new Rust version.
-FROM rust:1.77-alpine3.19
+# Rust version: 1.77
+# Alpine version: 3.19
+# Cargo-Chef version: 0.1.66
+#
+# Official releases: https://hub.docker.com/r/lukemathwalker/cargo-chef
+FROM lukemathwalker/cargo-chef:0.1.66-rust-1.77-alpine3.19
 
 # Update apk packagte list
 RUN apk upgrade --no-cache
